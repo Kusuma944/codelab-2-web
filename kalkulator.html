@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Penjumlahan dan Penambahan dengan JavaScript</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #00c6ff, #0072ff, #20b2aa);
+            color: #fff;
+            text-align: center;
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h2 {
+            color: #fff;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        label {
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-right: 10px;
+        }
+
+        input[type="number"] {
+            padding: 12px;
+            font-size: 1.1rem;
+            width: 150px;
+            border: none;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #0072ff;
+        }
+
+        button {
+            background-color: #1f8ebc;
+            color: #fff;
+            padding: 12px 24px;
+            font-size: 1rem;
+            border: none;
+            cursor: pointer;
+            margin: 10px;
+            border-radius: 50px;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #17a2b8;
+            transform: scale(1.1);
+        }
+
+        p {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+
+        span {
+            color: #ffeb3b;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>Operasi Penjumlahan</h2>
+
+    <div class="input-group">
+        <label for="number1">Angka Pertama:</label>
+        <input type="number" id="number1" value="0">
+        <button onclick="tambahAngka('number1')">Tambah Angka Pertama</button>
+    </div>
+
+    <div class="input-group">
+        <label for="number2">Angka Kedua:</label>
+        <input type="number" id="number2" value="0">
+        <button onclick="tambahAngka('number2')">Tambah Angka Kedua</button>
+    </div>
+
+    <button onclick="hitungPenjumlahan()">Jumlahkan</button>
+
+    <p>Hasil: <span id="hasil"></span></p>
+
+    <script>
+        // Fungsi untuk menambah angka dari input
+        function tambahAngka(idInput) {
+            var angka = parseFloat(document.getElementById(idInput).value);
+            document.getElementById(idInput).value = angka + 1;
+        }
+
+        // Fungsi untuk menghitung penjumlahan
+        function hitungPenjumlahan() {
+            var angka1 = parseFloat(document.getElementById('number1').value);
+            var angka2 = parseFloat(document.getElementById('number2').value);
+
+            var hasil = angka1 + angka2;
+            document.getElementById('hasil').innerText = hasil;
+        }
+    </script>
+</body>
+</html>
